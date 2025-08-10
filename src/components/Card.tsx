@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card as CardType } from '../types/game';
+import logoImg from '../assets/logo.png';
+
 
 interface CardProps {
   card: CardType;
@@ -26,17 +28,19 @@ export const Card: React.FC<CardProps> = ({ card, onFlip, imageSize }) => {
         `}
       >
         {/* Verso */}
-        <div
-          className={`
-            absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-lg
-            bg-gradient-to-br from-pink-300 to-pink-400
-            flex items-center justify-center text-white text-2xl font-bold
-            border-4 border-pink-300 hover:scale-105 transition-transform duration-200
-            ${card.isMatched ? 'ring-4 ring-green-400' : ''}
-          `}
-        >
-          <span className="text-4xl">🎴</span>
-        </div>
+       {/* Verso */}
+<div
+  className={`
+    absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-lg
+    bg-gradient-to-br from-pink-300 to-pink-400
+    flex items-center justify-center
+    border-4 border-pink-300 hover:scale-105 transition-transform duration-200
+    ${card.isMatched ? 'ring-4 ring-green-400' : ''}
+  `}
+>
+  <img src={logoImg} alt="Logo" className="w-16 h-16 object-contain" />
+</div>
+
 
         {/* Frente */}
         <div
